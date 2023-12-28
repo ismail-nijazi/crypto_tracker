@@ -1,0 +1,17 @@
+$base-color: #1f2752;
+$secondary-color: #2f52c5;
+
+::placeholder {
+	/* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: #ccc;
+}
+
+:-ms-input-placeholder {
+	/* Internet Explorer 10-11 */
+	color: #ccc;
+}
+
+::-ms-input-placeholder {
+	/* Microsoft Edge */
+	color: #ccc;
+}
