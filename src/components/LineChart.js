@@ -1,5 +1,4 @@
 import React from "react";
-import { useSelector } from "react-redux";
 import {
 	Chart as ChartJS,
 	CategoryScale,
@@ -56,7 +55,8 @@ const OPTIONS = {
 };
 
 const LineChart = (props) => {
-	const { data, labels, selectedCurrency } = props;
+	const { data, labels, selectedCurrency } =
+		props;
 	if (!selectedCurrency) {
 		return null;
 	}
@@ -64,10 +64,13 @@ const LineChart = (props) => {
 		labels: labels,
 		datasets: [
 			{
-				label: selectedCurrency ? selectedCurrency.name : null,
+				label: selectedCurrency
+					? selectedCurrency.name
+					: null,
 				data: data,
 				borderColor: "rgb(161, 63, 128)",
-				backgroundColor: "rgba(161, 63, 128, 0.5)",
+				backgroundColor:
+					"rgba(161, 63, 128, 0.5)",
 			},
 		],
 	};
@@ -76,9 +79,18 @@ const LineChart = (props) => {
 		<div className="lineChart">
 			<div className="title">
 				<h3>{selectedCurrency.name}</h3>
-				<h3>{Math.round(selectedCurrency.priceUsd * 100) / 100}$</h3>
+				<h3>
+					{Math.round(
+						selectedCurrency.priceUsd *
+							100
+					) / 100}
+					$
+				</h3>
 			</div>
-			<Line options={OPTIONS} data={ChartData} />
+			<Line
+				options={OPTIONS}
+				data={ChartData}
+			/>
 		</div>
 	);
 };
